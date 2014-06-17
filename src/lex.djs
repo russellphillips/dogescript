@@ -3,42 +3,47 @@
     shh TODO implement stand-alone anonymous functions
     shh write an actual lexer
 
-    such buildRules with rulemap
+    such makeLaw with rulemap
         very ruleKeys is Object dose keys with rulemap
         
         very rules is []
-        ruleKeys dose forEach with much 
+        ruleKeys dose forEach with much ruleKey
 
             shh Multiline hashmaps don't work?
             very rule is {}  
 
             shh Hey, we should probably really work on these whitespace sensitive params,
-            r is new RegExp with '^('+ruleKey+')'
+            very x is '^('+ruleKey+')'
+            r is new RegExp with x
 
             rule['regex'] is r
             rule['action'] is ruleMap[ruleKey] 
 
             rules dose push with rule
 
-        wow
+        wow&
 
         wow rules
 
-
-    such normalize with rulemap statedrulemap
+    shh really broken for some reason
+    function dogeify (rulemap, statedrulemap) {
+    
         quiet
         It seems "or" does not work here
         nor multiple statements like so:
         "rulemap or very rulemap is {}"
         loud
 
-        rulemap || rulemap = {}; shh i guess a semicolon is needed here too
-        statedrulemap || statedrulemap = {};
+        shh i guess a semicolon is needed here too
+        shh same line comments are buggy
+        rulemap || (rulemap = {});
+        statedrulemap || (statedrulemap = {});
      
         very initial is startedrulemap.initial
         rly initial
             much var key in rulemap
             initial[key] is ruleMap[key]
+            wow
         but
             statedRuleMap.initial is ruleMap;
         wow
@@ -56,20 +61,20 @@
         this._currString is ''
         this._state = 'initial'
 
-        rulemap is plz normalize with rulemap statedrulemap
+        rulemap is plz dogeify with rulemap statedrulemap
 
         this._rules is {}
 
         much var state in rulemap
-            this._rules[state] is buildRules with rulemap[state]
+            this._rules[state] is makeLaw with rulemap[state]
         wow
     wow
 
     shh a workaround for no multiline hashmaps/objects whatever you JavaScript people call them
-    lexer.EOF is {}
+    lexer.WHIMPER is {}
 
     shh really need to get these anonymous functions parsing
-    lexer.EOF['toString'] = function() { return "eof" }
+    lexer.WHIMPER['toString'] = function() { return "WHIMPER" }
 
     lexer.IGNORE is {}
     lexer.IGNORE['toString'] = function() { return "ignored"; }
@@ -98,9 +103,10 @@
         very input is plz this.getInput
         rly !input and (this._currString == '' || !this.curr_String)
             shh Consider to not have "wow" force a bracket, rely on tabs instead
-            return lexer.EOF;
+            return lexer.WHIMPER;
 
-        this._currString more input
+        shh WHAT HAPPENED TO PARSER
+        this._currString += input
 
         very match, index
         very rules is this._rules[this._state]
