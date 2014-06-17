@@ -1,5 +1,9 @@
 ## dogescript spec (2.1.0)
 
+## heads up!
+
+This spec is a little bit out of date, and is missing some of the newer features. I'll be updating it soon, with the release of 2.4.0, but in the meantime, this documentation has some of the newer stuff (such as loops), and has examples: http://alexdantas.net/stuff/posts/introduction-to-dogescript/
+
 ### notes
 
 * dogescript uses single quotes for strings. Double quotes are not supported.
@@ -29,7 +33,7 @@ dogescript files are `.djs`. Should dogescript be ported to other languages, the
 * `much [params]` - `for ([params])`
 * `so [module]` - `var [module] = require([module])`
 * `so [module] as [name]` - `var [name] = require([module])`
-* `dose` - `.` (example: `console dose loge with 'such dot notation => console.log('such dot notation')`)
+* `dose` - `.` (example: `console dose loge with 'such dot notation'` - `console.log('such dot notation')`)
 * `trained` - `"use strict"`
 
 ### operators
@@ -54,5 +58,5 @@ Used in `many`, `much` and `rly`.
 ### standard objects
 
 * `console.loge` - `console.log`
-* `dogeument` - 'document'
+* `dogeument` - `document`
 * `windoge` - `window`
